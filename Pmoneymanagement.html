@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Principles of Money Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .principle-card {
+            background: rgba(255, 255, 255, 0.98);
+            margin-bottom: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .principle-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .principle-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .principle-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .principle-number {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 1.4rem;
+            margin-right: 20px;
+            vertical-align: middle;
+        }
+
+        .principle-title {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        .principle-content {
+            padding: 30px;
+        }
+
+        .principle-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        .exercises-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+        }
+
+        .exercises-title {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .exercises-title::before {
+            content: '💡';
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .exercise-item {
+            background: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .exercise-item:hover {
+            border-left-color: #c0392b;
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .exercise-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exercise-item p {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer strong {
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .principle-header {
+                padding: 20px;
+            }
+            
+            .principle-title {
+                font-size: 1.4rem;
+            }
+            
+            .principle-content {
+                padding: 20px;
+            }
+            
+            .exercises-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>10 Principles of Money Management</h1>
+            <p>Master your finances with these fundamental principles and practical exercises for building lasting financial success</p>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">1</span>
+                <span class="principle-title">Create and Stick to a Budget</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    A budget is the foundation of all financial planning and the roadmap to achieving your monetary goals. It provides a clear picture of your income versus expenses, helping you understand where your money goes each month. By creating a realistic budget, you gain control over your spending habits and can identify areas where you can cut costs or reallocate funds toward savings and investments. A well-structured budget acts as a financial guardrail, preventing overspending and ensuring you live within your means. Without a budget, you're essentially driving blindfolded through your financial journey, making it nearly impossible to reach your destination of financial stability and growth.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Track Every Expense:</strong> For the next 30 days, write down every single purchase you make, no matter how small. Use a notebook, smartphone app, or spreadsheet to record the date, amount, and category of each expense. This exercise will reveal spending patterns you never noticed.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Apply the 50/30/20 Rule:</strong> Allocate 50% of your after-tax income to needs (rent, utilities, groceries), 30% to wants (entertainment, dining out), and 20% to savings and debt repayment. Adjust these percentages based on your personal circumstances and financial goals.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Monthly Budget Review:</strong> Set aside time on the last Sunday of each month to review your budget performance. Compare your actual spending against your planned budget, identify variances, and adjust next month's budget accordingly.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Use the Envelope Method:</strong> For variable expenses like groceries and entertainment, withdraw cash at the beginning of each month and place it in labeled envelopes. When the money in an envelope is gone, you're done spending in that category for the month.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">2</span>
+                <span class="principle-title">Build an Emergency Fund</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    An emergency fund serves as your financial safety net, protecting you from unexpected life events that could otherwise derail your financial stability. This fund should ideally contain three to six months' worth of living expenses, stored in a easily accessible savings account. The purpose is not to generate high returns, but to provide immediate access to cash when emergencies strike, such as job loss, medical bills, car repairs, or home maintenance issues. Having an emergency fund prevents you from relying on credit cards or loans during tough times, which would only compound your financial stress. It provides peace of mind and allows you to take calculated risks in other areas of your financial life, knowing you have a solid foundation to fall back on.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Start Small with $500:</strong> Begin by saving just $500 as your starter emergency fund. This amount can cover many small emergencies and prevents you from using credit cards. Save $25-50 per week until you reach this initial goal.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Automate Your Emergency Savings:</strong> Set up an automatic transfer from your checking account to a separate high-yield savings account immediately after each payday. Even $50 per month adds up to $600 annually toward your emergency fund.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Use Windfall Money:</strong> Commit to putting any unexpected money (tax refunds, bonuses, gifts, cashback rewards) directly into your emergency fund until it reaches your target amount. This accelerates your savings without impacting your regular budget.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Calculate Your Magic Number:</strong> List all your essential monthly expenses (rent, utilities, insurance, minimum debt payments, groceries, transportation) and multiply by 3-6 to determine your emergency fund target. Keep this number visible as motivation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">3</span>
+                <span class="principle-title">Pay Off High-Interest Debt First</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    High-interest debt, particularly credit card debt, acts like quicksand for your finances, trapping you in a cycle where most of your payments go toward interest rather than reducing the principal balance. The mathematical reality is stark: if you're earning 7% on investments while paying 18% on credit card debt, you're guaranteed to lose 11% on that money. Prioritizing high-interest debt elimination provides an immediate, guaranteed return on your money equal to the interest rate you're paying. This principle, often called the "debt avalanche method," involves paying minimum amounts on all debts while throwing every extra dollar at the highest-interest debt first. Once that's eliminated, you roll that payment amount into attacking the next highest-interest debt, creating a powerful momentum that accelerates your journey to debt freedom.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Create a Debt Inventory:</strong> List all your debts with current balances, minimum payments, and interest rates. Rank them from highest to lowest interest rate. This visual representation helps you see exactly what you're fighting and creates your attack strategy.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Find Extra Payment Money:</strong> Review your budget to find an additional $50-200 monthly for debt payments. Consider temporarily cutting subscriptions, eating out less, or taking on a side gig. Apply this extra amount to your highest-interest debt while maintaining minimums on others.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Use the Debt Snowball for Motivation:</strong> If you struggle with motivation, start with the smallest debt balance regardless of interest rate. The psychological victory of eliminating a debt completely can provide momentum to tackle larger debts, even if it's not mathematically optimal.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Negotiate Lower Interest Rates:</strong> Call your credit card companies and request lower interest rates, especially if you've been a good customer. Even a 2-3% reduction can save hundreds of dollars and months of payments over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">4</span>
+                <span class="principle-title">Invest Early and Consistently</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    Time is the most powerful factor in building wealth through investing, thanks to the magic of compound interest where your earnings generate their own earnings over time. Starting to invest early, even with small amounts, can result in significantly more wealth than starting later with larger amounts due to the exponential nature of compounding. Consistency in investing, often called dollar-cost averaging, helps smooth out market volatility by purchasing more shares when prices are low and fewer when prices are high. This principle emphasizes that perfect timing is less important than time in the market, and that regular, automated investments remove the emotional decision-making that often leads to poor investment choices. The key is to start now, regardless of market conditions, and maintain a long-term perspective that allows compound growth to work its magic over decades.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Start with Your 401(k):</strong> If your employer offers a 401(k) match, contribute at least enough to get the full match immediately. This is literally free money with a 100% return. If you can't afford the full match, start with 1% and increase by 1% every six months.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Open an Investment Account:</strong> Set up a low-cost brokerage account or IRA and invest in broad market index funds. Start with just $25-50 per month if that's all you can afford. Many brokerages now allow fractional share investing, so you can start with any amount.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Automate Your Investments:</strong> Set up automatic transfers from your checking account to your investment account on the same day you get paid. This "pay yourself first" approach ensures investing happens before you have a chance to spend the money elsewhere.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Track Your Progress:</strong> Calculate how much your investments could be worth in 10, 20, and 30 years using compound interest calculators. Update these projections quarterly to stay motivated and see how small, consistent contributions grow over time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">5</span>
+                <span class="principle-title">Live Below Your Means</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    Living below your means is the fundamental principle that creates the gap between income and expenses necessary for building wealth, and it's often the difference between financial stress and financial freedom. This doesn't mean living in deprivation, but rather making conscious choices about spending and finding satisfaction in experiences and relationships rather than material possessions. It requires resisting lifestyle inflation, where increased income leads to proportionally increased spending, keeping you on the same financial treadmill despite earning more money. The goal is to maintain or even reduce your cost of living as your income grows, allowing the difference to be directed toward savings, investments, and debt elimination. This principle creates financial flexibility, reduces stress, and builds a foundation for taking advantage of opportunities when they arise, whether that's starting a business, changing careers, or handling unexpected challenges.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Implement the 24-Hour Rule:</strong> For any non-essential purchase over $50, wait 24 hours before buying. For purchases over $200, wait a week. This cooling-off period helps distinguish between wants and needs and often prevents impulse buying.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Calculate Cost Per Use:</strong> Before buying anything, calculate how much it will cost per use. A $200 jacket worn twice per month for a year costs $8.33 per wear, while a $50 jacket worn weekly costs $0.96 per wear. This exercise reveals true value.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Practice Gratitude Spending:</strong> Each month, identify three things you already own that bring you joy or serve you well. This exercise helps you appreciate what you have and reduces the urge to constantly acquire new things.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Set Spending Limits:</strong> Establish monthly limits for discretionary categories like dining out, entertainment, and shopping. When you reach the limit, you're done for the month. This creates mindful spending and helps prioritize what matters most to you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">6</span>
+                <span class="principle-title">Diversify Your Investments</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    Diversification is often called the only free lunch in investing because it allows you to reduce risk without necessarily reducing expected returns by spreading your investments across different asset classes, geographic regions, and market sectors. The principle recognizes that different investments perform well under different economic conditions, so having a mix helps smooth out the inevitable ups and downs of any single investment. A well-diversified portfolio might include domestic and international stocks, bonds, real estate investment trusts (REITs), and possibly commodities, with the exact allocation depending on your age, risk tolerance, and financial goals. This principle protects you from the catastrophic risk of putting all your eggs in one basket, whether that basket is a single company, industry, or even country. Diversification also helps manage the emotional aspect of investing by reducing the impact of any single investment's poor performance on your overall portfolio.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Use Target-Date Funds:</strong> If you're a beginning investor, consider target-date funds that automatically diversify across stocks and bonds and adjust the allocation as you age. These funds provide instant diversification with a single purchase and professional management.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Apply the Age-in-Bonds Rule:</strong> As a starting point, consider holding your age in percentage of bonds (e.g., if you're 30, consider 30% bonds and 70% stocks). Adjust based on your risk tolerance and goals, but this provides a framework for asset allocation.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Review and Rebalance Quarterly:</strong> Every three months, check if your portfolio allocation has drifted from your target percentages due to different performance of various investments. Sell some of the overperforming assets and buy more of the underperforming ones to maintain your desired allocation.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Add International Exposure:</strong> Ensure at least 20-30% of your stock allocation is in international markets through international index funds. This protects against the risk of any single country's market underperforming and provides exposure to global economic growth.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">7</span>
+                <span class="principle-title">Protect Your Assets with Insurance</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    Insurance serves as a critical component of financial planning by protecting your accumulated wealth and future earning potential from catastrophic events that could otherwise destroy years of financial progress in a single incident. The principle is to insure against losses that would be financially devastating while self-insuring against smaller losses you can afford to absorb. Essential insurance includes health insurance to protect against medical bankruptcy, disability insurance to protect your ability to earn income, liability insurance to protect your assets from lawsuits, and term life insurance to protect your family's financial future if you die prematurely. Property insurance for your home and car protects major assets you've worked hard to acquire. The key is finding the right balance between adequate protection and affordable premiums, often achieved through higher deductibles that lower premium costs while still protecting against major financial disasters.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Conduct an Insurance Audit:</strong> Review all your current insurance policies (health, auto, home/rental, life, disability) to understand your coverage, deductibles, and premium costs. Identify gaps in coverage and areas where you might be over-insured.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Calculate Life Insurance Needs:</strong> Use the rule of thumb of 10-12 times your annual income for life insurance, or calculate specific needs including mortgage balance, children's education costs, and family living expenses for several years. Term life insurance is usually the most cost-effective option.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Increase Deductibles to Lower Premiums:</strong> Consider raising deductibles on auto and homeowner's insurance to $1,000 or higher if you have adequate emergency savings. This can significantly reduce premium costs while still protecting against major losses.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Shop Around Annually:</strong> Get quotes from different insurance companies each year for auto and homeowner's insurance. Rates can vary significantly between companies, and your current insurer may not offer the best deal as your circumstances change.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">8</span>
+                <span class="principle-title">Continuously Educate Yourself About Finance</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    Financial literacy is not a destination but a lifelong journey that requires continuous learning and adaptation as economic conditions, investment options, and personal circumstances evolve over time. The financial world is constantly changing with new investment vehicles, tax laws, economic policies, and technological innovations that can impact your financial strategy. By committing to ongoing financial education, you develop the knowledge and confidence to make informed decisions, avoid costly mistakes, and take advantage of new opportunities as they arise. This principle recognizes that what you don't know about money can cost you significantly more than what you do know can earn you. Financial education also helps you avoid falling victim to scams, understand complex financial products before investing, and develop the critical thinking skills necessary to evaluate financial advice from various sources. The goal is to become your own best financial advisor while knowing when to seek professional help.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Read One Financial Book Per Quarter:</strong> Choose books covering different aspects of personal finance like budgeting, investing, real estate, or entrepreneurship. Create a reading schedule and take notes on key concepts you can apply to your financial situation.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Follow Reputable Financial Websites:</strong> Bookmark and regularly read 2-3 quality financial websites or blogs. Set aside 15 minutes each morning or evening to read financial news and educational content to stay informed about market trends and new strategies.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Take Online Financial Courses:</strong> Enroll in free or low-cost online courses about investing, retirement planning, or tax strategies. Many universities and financial institutions offer excellent courses that can deepen your understanding of complex topics.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Join Investment Clubs or Forums:</strong> Participate in local investment clubs or online communities where you can discuss strategies, share experiences, and learn from others' successes and mistakes. This provides practical, real-world financial education.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">9</span>
+                <span class="principle-title">Set Clear Financial Goals</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    Clear, specific, and measurable financial goals provide direction and motivation for your money management efforts, transforming abstract concepts like "saving money" into concrete targets with deadlines and action plans. Without specific goals, it's easy to drift aimlessly through your financial life, making decisions based on immediate desires rather than long-term objectives. Effective financial goals should be SMART: Specific, Measurable, Achievable, Relevant, and Time-bound, such as "Save $15,000 for a house down payment by December 2026" rather than "Save money for a house someday." Goals should span different time horizons, including short-term goals (1 year or less), medium-term goals (2-5 years), and long-term goals (5+ years), with each category requiring different strategies and investment approaches. Having clear goals also helps you prioritize competing financial demands and make difficult decisions about spending versus saving, ensuring your money is working toward what matters most to you.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Write Down Five Financial Goals:</strong> List your top five financial goals with specific dollar amounts and target dates. Include a mix of short-term (emergency fund), medium-term (vacation, car), and long-term (retirement, house) goals. Post this list where you'll see it daily.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Break Goals into Monthly Targets:</strong> For each goal, calculate how much you need to save monthly to reach it by your target date. For example, if you need $6,000 for a vacation in 2 years, you need to save $250 monthly. Adjust goals or timelines if monthly amounts seem unrealistic.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Create Visual Progress Trackers:</strong> Make charts, graphs, or use apps to visually track progress toward each goal. Seeing progress visually is motivating and helps maintain momentum during challenging months when saving feels difficult.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Review and Adjust Goals Quarterly:</strong> Every three months, review your progress and adjust goals if necessary based on changed circumstances, new priorities, or lessons learned. This keeps goals realistic and relevant to your current situation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle-card">
+            <div class="principle-header">
+                <span class="principle-number">10</span>
+                <span class="principle-title">Regularly Review and Adjust Your Financial Plan</span>
+            </div>
+            <div class="principle-content">
+                <p class="principle-description">
+                    A financial plan is a living document that requires regular review and adjustment to remain effective as your life circumstances, income, goals, and market conditions change over time. What worked in your twenties may not be appropriate in your forties, and economic conditions that favor certain strategies today may shift tomorrow, requiring different approaches. Regular review involves analyzing your progress toward goals, evaluating the performance of your investments, assessing whether your budget still reflects your priorities, and determining if your insurance coverage remains adequate for your current situation. This principle prevents you from operating on autopilot with outdated strategies and ensures your financial plan evolves with your life. It also provides opportunities to celebrate successes, learn from mistakes, and make course corrections before small problems become major setbacks. The frequency of reviews should match the importance and volatility of different financial components, with some aspects reviewed monthly and others annually.
+                </p>
+                <div class="exercises-section">
+                    <h3 class="exercises-title">Practical Exercises</h3>
+                    <div class="exercise-item">
+                        <p><strong>Schedule Monthly Money Meetings:</strong> Set a recurring monthly appointment with yourself (or your partner) to review your budget, track progress toward goals, and discuss upcoming financial decisions. Treat this as seriously as any important business meeting.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Conduct Annual Financial Physical:</strong> Once per year, comprehensively review all aspects of your finances including net worth calculation, goal progress, investment performance, insurance adequacy, tax strategies, and estate planning needs. Identify areas needing attention in the coming year.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Track Key Financial Metrics:</strong> Monitor important numbers like net worth, savings rate, debt-to-income ratio, and investment returns on a regular basis. Create a simple spreadsheet or use financial software to track these metrics over time and identify trends.</p>
+                    </div>
+                    <div class="exercise-item">
+                        <p><strong>Adjust for Life Changes:</strong> Whenever you experience major life events (marriage, divorce, new job, birth of child, home purchase), immediately review and adjust your financial plan. These events often require significant changes to budgets,
