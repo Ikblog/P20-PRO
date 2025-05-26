@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 7 Habits of Highly Effective People - 10 Core Principles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .principle {
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .principle:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .principle-header {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .principle-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+        }
+
+        .principle-number {
+            font-size: 3rem;
+            font-weight: bold;
+            float: left;
+            margin-right: 15px;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .principle-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .principle-content {
+            padding: 25px;
+        }
+
+        .principle-explanation {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            text-align: justify;
+            text-indent: 20px;
+        }
+
+        .exercises-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .exercises-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #229954;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .exercises-title::before {
+            content: '💡';
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .exercise-list {
+            list-style: none;
+            counter-reset: exercise-counter;
+        }
+
+        .exercise-item {
+            counter-increment: exercise-counter;
+            margin-bottom: 12px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .exercise-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .exercise-item::before {
+            content: counter(exercise-counter);
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #27ae60;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .exercise-item {
+            padding-left: 25px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer p {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .principle-number {
+                font-size: 2rem;
+                float: none;
+                display: block;
+                margin-bottom: 10px;
+            }
+            
+            .principle-title {
+                font-size: 1.5rem;
+            }
+            
+            .principle-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>The 7 Habits of Highly Effective People</h1>
+            <p>10 Core Principles by Stephen Covey</p>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">1</div>
+                <div class="principle-title">Be Proactive - Take Control of Your Life</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    Being proactive means taking full responsibility for your life and choices instead of blaming others or waiting for things to happen to you. Proactive people focus on what they can control and influence rather than worrying about things beyond their power. They understand that between what happens to them and their response, there is a space where they can choose their reaction. This principle teaches you to stop being a victim of circumstances and start being the author of your own story. When you are proactive, you create your own weather instead of being affected by the weather around you. You make decisions based on your values rather than your feelings or what others expect from you.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">Replace reactive language like "I have to" or "I can't" with proactive language like "I choose to" or "I will find a way."</li>
+                        <li class="exercise-item">When facing problems, ask yourself "What can I do about this?" instead of "Why is this happening to me?"</li>
+                        <li class="exercise-item">Make a list of your concerns and circle only those you can directly influence, then focus your energy only on those items.</li>
+                        <li class="exercise-item">Take initiative in one small area of your life each day without waiting for permission or perfect conditions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">2</div>
+                <div class="principle-title">Begin With the End in Mind - Create Your Life Vision</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    This principle means starting every day, task, or project with a clear picture of what you want to achieve in the end. It involves creating a personal mission statement that defines your core values and long-term goals so you can make daily decisions that align with your bigger purpose. When you begin with the end in mind, you avoid getting busy with activities that don't really matter and instead focus on what will truly make a difference in your life. This habit helps you live intentionally rather than just reacting to whatever comes your way. It means visualizing your ideal future and then working backward to create a plan that will get you there. Without this clear vision, you might climb the ladder of success only to find it's leaning against the wrong wall.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">Write a personal mission statement that describes the kind of person you want to be and what you want to accomplish in life.</li>
+                        <li class="exercise-item">Before starting any task, clearly define what success looks like for that specific activity or project.</li>
+                        <li class="exercise-item">Spend 10 minutes each morning visualizing how you want your day to go and what you want to achieve.</li>
+                        <li class="exercise-item">Regularly review your goals and activities to ensure they align with your long-term vision and values.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">3</div>
+                <div class="principle-title">Put First Things First - Priority Management</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    This principle is about organizing your time and energy around your most important priorities rather than just responding to whatever seems urgent at the moment. It teaches you to distinguish between what is urgent and what is truly important, focusing most of your attention on important activities that align with your values and long-term goals. Many people spend their lives putting out fires and responding to other people's priorities instead of working on what matters most to them. Putting first things first means having the discipline to say no to good opportunities so you can say yes to the best ones. It requires you to plan your week around your key roles and goals rather than just filling your calendar with random activities. This habit transforms you from being busy to being truly productive and effective.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">Use the urgent/important matrix to categorize your tasks and spend more time on important but not urgent activities.</li>
+                        <li class="exercise-item">Plan your week by first scheduling time for your most important goals and relationships before filling in other activities.</li>
+                        <li class="exercise-item">Practice saying no to requests that don't align with your priorities, even if they seem like good opportunities.</li>
+                        <li class="exercise-item">Identify your peak energy hours and protect that time for your most important and challenging work.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">4</div>
+                <div class="principle-title">Think Win-Win - Seek Mutual Benefits</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    Win-win thinking means looking for solutions that benefit everyone involved rather than thinking that for you to win, someone else must lose. This mindset is based on the belief that there is plenty of success, recognition, and happiness to go around for everyone. People with a win-win attitude seek agreements and solutions that are mutually beneficial and satisfying to all parties. They understand that relationships are more important than individual transactions and that helping others succeed ultimately helps them succeed too. This principle requires you to balance courage with consideration - having the courage to express your needs while also being considerate of others' needs. When you think win-win, you build trust, strengthen relationships, and create long-term success rather than short-term victories that damage future opportunities.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">In conflicts or negotiations, ask "How can we both get what we need?" instead of trying to win at the other person's expense.</li>
+                        <li class="exercise-item">Look for opportunities to help others succeed, knowing that their success will often benefit you in the long run.</li>
+                        <li class="exercise-item">When someone disagrees with you, try to understand their perspective and find common ground before presenting your viewpoint.</li>
+                        <li class="exercise-item">Replace competitive thinking with collaborative thinking by asking "How can we work together?" in challenging situations.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">5</div>
+                <div class="principle-title">Seek First to Understand, Then to Be Understood</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    This principle teaches you to listen with the genuine intent to understand others before trying to make them understand you. Most people listen with the intent to reply rather than to truly comprehend what the other person is saying and feeling. When you seek first to understand, you give others the psychological air they need and create an atmosphere of trust and openness. This empathetic listening helps you see situations from different perspectives and often reveals solutions that wouldn't be obvious otherwise. Understanding doesn't mean agreeing, but it does mean that you genuinely try to see the world through the other person's eyes. Once people feel understood, they become much more open to understanding your perspective and working together toward solutions. This habit transforms relationships and makes you much more effective in all your interactions with others.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">Practice listening without preparing your response, focusing completely on understanding what the other person is trying to communicate.</li>
+                        <li class="exercise-item">Repeat back what you heard in your own words to make sure you understood correctly before sharing your own thoughts.</li>
+                        <li class="exercise-item">Ask questions to understand the emotions and concerns behind someone's words, not just the facts they're presenting.</li>
+                        <li class="exercise-item">When you disagree with someone, first acknowledge their viewpoint before explaining your different perspective.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">6</div>
+                <div class="principle-title">Synergize - The Power of Creative Cooperation</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    Synergy happens when people work together in ways that create better results than any individual could achieve alone - where the whole becomes greater than the sum of its parts. This principle is about valuing differences in people and using those differences to create new and better solutions. Instead of seeing different opinions as obstacles, synergistic thinking sees them as opportunities to discover new possibilities that no one had thought of before. Synergy requires humility, openness to new ideas, and the belief that other people might have insights that can improve your thinking. When true synergy occurs, everyone involved is energized and excited because they've created something together that none of them could have created individually. This habit transforms groups from collections of individuals into powerful creative teams that can solve complex problems and achieve remarkable results.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">When working with others, actively seek out different perspectives and ask "What would you add to this idea?"</li>
+                        <li class="exercise-item">Instead of immediately rejecting ideas that seem strange, ask "What if this could work? How might we make it better?"</li>
+                        <li class="exercise-item">Look for ways to combine your strengths with others' strengths to create something better than either could do alone.</li>
+                        <li class="exercise-item">When facing a problem, bring together people with different backgrounds and viewpoints to brainstorm creative solutions.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">7</div>
+                <div class="principle-title">Sharpen the Saw - Continuous Self-Renewal</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    This principle is about taking time to renew and improve yourself in four key areas: physical health, mental development, spiritual growth, and social relationships. Just like a saw becomes dull with use and needs to be sharpened to remain effective, you need regular renewal to maintain and increase your effectiveness in life. Physical renewal includes exercise, proper nutrition, and adequate rest. Mental renewal involves reading, learning new skills, and engaging in creative activities. Spiritual renewal means connecting with your values through meditation, prayer, or spending time in nature. Social renewal focuses on building meaningful relationships and contributing to others. Many people neglect this renewal because they think they're too busy, but taking time to sharpen the saw actually makes you more productive and effective in everything else you do. This habit ensures that you can sustain high performance over the long term rather than burning out.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">Schedule regular exercise, healthy meals, and adequate sleep as non-negotiable appointments with yourself.</li>
+                        <li class="exercise-item">Set aside time each day for reading, learning something new, or engaging in creative activities that challenge your mind.</li>
+                        <li class="exercise-item">Spend time daily in quiet reflection, meditation, prayer, or activities that connect you with your deeper values and purpose.</li>
+                        <li class="exercise-item">Invest time in building and maintaining meaningful relationships through quality conversations and acts of service.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">8</div>
+                <div class="principle-title">Character vs. Personality - Build from the Inside Out</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    True effectiveness comes from developing strong character - your fundamental beliefs, values, and principles - rather than just focusing on personality techniques and quick fixes. Character is about who you really are when no one is watching, while personality is about how you appear to others in social situations. Many people try to improve their relationships and success by learning communication techniques or image management, but these approaches fail without a foundation of integrity, honesty, and genuine care for others. Character-based effectiveness takes longer to develop but creates lasting results because it's built on universal principles that work in all situations and relationships. When your character aligns with correct principles, you naturally behave in ways that build trust, inspire others, and create sustainable success. This principle teaches you to focus on being a person of integrity rather than just trying to appear successful or likeable to others.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">Identify your core values and make decisions based on these principles rather than on what's convenient or popular.</li>
+                        <li class="exercise-item">Practice honesty in small things, keeping promises to yourself and others even when it's difficult or no one will know.</li>
+                        <li class="exercise-item">Work on improving your character by reading about and reflecting on timeless principles like integrity, kindness, and justice.</li>
+                        <li class="exercise-item">Ask yourself "What kind of person do I need to become?" rather than "What techniques do I need to learn?" when facing challenges.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">9</div>
+                <div class="principle-title">The Abundance Mentality - There's Enough for Everyone</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    The abundance mentality is the belief that there are enough resources, opportunities, recognition, and success in the world for everyone to thrive. This mindset contrasts with the scarcity mentality, which assumes that if someone else wins, you must lose. People with an abundance mentality genuinely celebrate others' successes, share credit and recognition, and look for ways to help others achieve their goals. They understand that helping others succeed often creates more opportunities for everyone, including themselves. This principle frees you from jealousy, competition, and the need to put others down to feel good about yourself. Instead, you can focus your energy on creating value and building relationships rather than protecting your position or competing for limited resources. The abundance mentality leads to greater creativity, better relationships, and more opportunities because you're open to possibilities rather than focused on limitations.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">Genuinely celebrate others' successes and achievements instead of feeling threatened or jealous of their progress.</li>
+                        <li class="exercise-item">Look for opportunities to share credit, recognition, and resources with others rather than hoarding them for yourself.</li>
+                        <li class="exercise-item">When facing competition, focus on improving yourself rather than trying to make others look bad or fail.</li>
+                        <li class="exercise-item">Practice gratitude daily by recognizing the abundance that already exists in your life and relationships.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="principle">
+            <div class="principle-header">
+                <div class="principle-number">10</div>
+                <div class="principle-title">The Power of Choice - Response vs. Reaction</div>
+            </div>
+            <div class="principle-content">
+                <div class="principle-explanation">
+                    Between every stimulus and response, there is a space where you have the freedom to choose your reaction, and in that choice lies your power to create the life and relationships you want. Most people react automatically to situations based on their feelings, past experiences, or social conditioning, but highly effective people pause and consciously choose responses that align with their values and long-term goals. This principle teaches you that you are not a victim of your circumstances, emotions, or other people's behavior - you always have the power to choose how you will respond. Your responses, over time, shape your character, your relationships, and your destiny. When you exercise this power of choice consistently, you become the creative force in your own life rather than just reacting to whatever happens to you. This fundamental freedom to choose your response is what separates humans from animals and gives you the ability to write your own story regardless of your past or current circumstances.
+                </div>
+                <div class="exercises-section">
+                    <div class="exercises-title">Daily Application Exercises</div>
+                    <ul class="exercise-list">
+                        <li class="exercise-item">When you feel strong emotions, pause and take three deep breaths before responding to give yourself time to choose your reaction.</li>
+                        <li class="exercise-item">Ask yourself "What response would be most helpful in this situation?" instead of just reacting based on how you feel.</li>
+                        <li class="exercise-item">Practice choosing responses that align with your values even when your emotions or impulses push you toward different reactions.</li>
+                        <li class="exercise-item">Reflect each evening on moments when you chose your response wisely and moments when you reacted automatically, learning from both.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>"The main thing is to keep the main thing the main thing." - Stephen Covey</p>
+        </div>
+    </div>
+</body>
+</html>
